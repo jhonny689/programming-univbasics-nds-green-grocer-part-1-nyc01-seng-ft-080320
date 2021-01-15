@@ -18,9 +18,13 @@ def consolidate_cart(cart)
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
   consolidated_cart = [];
   cart.each{ |cart_item|
+<<<<<<< HEAD
     index = consolidated_cart.find_index{ |receipt_item|
       receipt_item[:item]==cart_item[:item]
     }
+=======
+    index = find_item_by_name_in_collection(cart_item[:name], consolidated_cart)
+>>>>>>> 7ddb705528d91d7fd81d29e2826f10c3a10fb873
     if index
       consolidated_cart[index][:count] += 1
     else
